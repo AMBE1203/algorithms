@@ -1,7 +1,5 @@
 package quy_hoach_dong.bai_tap.trang_170_co_huong_dan;
 
-import java.util.Arrays;
-
 /**
  * Created by AMBE on 09/16/2018 at 18:00.
  */

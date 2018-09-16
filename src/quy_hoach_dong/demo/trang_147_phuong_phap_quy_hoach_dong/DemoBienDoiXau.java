@@ -44,13 +44,11 @@ public class DemoBienDoiXau {
 
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
-
                 if (X[i].equals(Y[j])) {
                     F[i][j] = F[i - 1][j - 1];
                 } else {
                     F[i][j] = min(F[i][j - 1], F[i - 1][j - 1], F[i - 1][j]) + 1;
                 }
-
             }
         }
 
@@ -63,16 +61,12 @@ public class DemoBienDoiXau {
                 m--;
                 n--;
             } else {
-
-
-
                 if (F[m][n] == F[m][n - 1] + 1) { // neu la phep chen
                     System.out.println("insert(" + m + "," + Y[n] + ")");
                     X[m + 1] = Y[n]; // truy sang phai
                     n--;
                 } else if (F[m][n] == F[m - 1][n - 1]) { // neu la phep thay
                     System.out.println("replace(" + m + "," + Y[n] + ")");
-
                     X[m] = Y[n];
                     m--; // truy cheo len tren
                     n--;
@@ -80,9 +74,7 @@ public class DemoBienDoiXau {
                     System.out.println("delete(" + m + ")"); // neu la phep xoa
                     X[m] = "";
                     m--; // truy len tren
-
                 }
-
             }
         }
     }

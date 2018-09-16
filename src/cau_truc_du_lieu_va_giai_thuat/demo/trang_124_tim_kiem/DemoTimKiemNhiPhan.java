@@ -35,7 +35,7 @@ public class DemoTimKiemNhiPhan {
     public static void main(String[] args) {
         DemoTimKiemNhiPhan demoTimKiemNhiPhan=new DemoTimKiemNhiPhan();
         int[] arr= {1,3,4,6,8,9};
-        System.out.printf(demoTimKiemNhiPhan.binarySearch(7,arr) +" ");
+        System.out.printf(demoTimKiemNhiPhan.binarySearch(6,arr) +" ");
     }
 
 }

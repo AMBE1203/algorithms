@@ -24,7 +24,7 @@ public class BaiTap1 {
     private int k;
     private int[][] F;
 
-    public BaiTap1(int n, int k, int[][]f) {
+    public BaiTap1(int n, int k, int[][] f) {
         this.n = n;
         this.k = k;
         F = f;

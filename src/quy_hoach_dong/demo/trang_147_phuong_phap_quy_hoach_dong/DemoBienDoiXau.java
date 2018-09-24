@@ -90,11 +90,11 @@ public class DemoBienDoiXau {
         demoBienDoiXau.optimize();
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {
-                System.out.printf(F[i][j] + "");
+                System.out.printf(F[i][j] + "\t");
             }
             System.out.println();
         }
-             demoBienDoiXau.trade();
+        demoBienDoiXau.trade();
     }
 
 }

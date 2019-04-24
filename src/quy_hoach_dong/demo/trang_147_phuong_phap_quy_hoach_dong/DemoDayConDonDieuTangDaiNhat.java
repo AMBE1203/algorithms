@@ -11,7 +11,6 @@ package quy_hoach_dong.demo.trang_147_phuong_phap_quy_hoach_dong;
  * đặt L[i] = L[jmax] + 1.
  * Truy vết. mỗi khi đặt L[i] = L[jmax] + 1. ta đặt T[i] = jmax để lưu lại rằng dãy con dài
  * nhất bắt đầu tại a[i] sẽ có phần từ kế tiếp là a[jmax]
-
  */
 public class DemoDayConDonDieuTangDaiNhat {
 
@@ -56,6 +55,9 @@ public class DemoDayConDonDieuTangDaiNhat {
     public static void main(String[] args) {
         int[] arrr = {5, 2, 3, 4, 9, 10, 5, 6, 7, 8};
         int n = arrr.length;
+        int[] L = new int[n];
+
+
         DemoDayConDonDieuTangDaiNhat demoDayConDonDieuTangDaiNhat = new DemoDayConDonDieuTangDaiNhat();
         demoDayConDonDieuTangDaiNhat.optimize(arrr, n);
     }

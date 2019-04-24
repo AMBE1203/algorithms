@@ -56,7 +56,7 @@ public class BaiTap2 {
     public static void main(String[] args) {
         BaiTap2 baiTap2 = new BaiTap2();
         String x = "1ab1cdeeefghi12";
-        String y = "1abc1def2ghi3";
+        String y = "1abc1c1def2ghi3";
 
         int[][] F = new int[x.length() + 1][y.length() + 1];
         baiTap2.optimize(F, x, y);

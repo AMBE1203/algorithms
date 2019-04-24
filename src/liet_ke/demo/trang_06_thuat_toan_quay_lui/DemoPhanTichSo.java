@@ -37,9 +37,9 @@ public class DemoPhanTichSo {
     public  void result(int k) {
         dem++;
         for (int i = 1; i <= k; i++) {
-            System.out.print(arr[i]);
+            System.out.print(arr[i] +"\t");
         }
-        System.out.print("\t" + dem);
+        System.out.print("\t i=" + dem);
         System.out.println();
     }
 

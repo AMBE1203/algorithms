@@ -66,7 +66,7 @@ public class BaiTap1 {
 
     public static void main(String[] args) {
         int n = 3;
-        int k = 3;
+        int k = 10;
 
         int[][] F = new int[100][100];
 

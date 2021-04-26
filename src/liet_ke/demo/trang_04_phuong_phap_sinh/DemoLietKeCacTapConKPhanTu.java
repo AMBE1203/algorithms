@@ -6,20 +6,20 @@ package liet_ke.demo.trang_04_phuong_phap_sinh;
 public class DemoLietKeCacTapConKPhanTu {
 
 
-    public  void giaiThuat(int n, int k) {
+    public void giaiThuat(int n, int k) {
 
         // k < n
         int[] arr = new int[n];
         int i;
 
         // khoi tao cau hinh ban dau
-        for ( i = 0; i < k; i++) {
+        for (i = 0; i < k; i++) {
             arr[i] = i;
         }
         do {
 // in ra cau hinh hien tai
-            for ( i = 0; i < k; i++) {
-                System.out.print(arr[i]+1);
+            for (i = 0; i < k; i++) {
+                System.out.print(arr[i] + 1);
             }
             System.out.println();
 
@@ -44,7 +44,7 @@ public class DemoLietKeCacTapConKPhanTu {
     }
 
     public static void main(String[] args) {
-        DemoLietKeCacTapConKPhanTu demoLietKeCacTapConKPhanTu=new DemoLietKeCacTapConKPhanTu();
+        DemoLietKeCacTapConKPhanTu demoLietKeCacTapConKPhanTu = new DemoLietKeCacTapConKPhanTu();
 
         demoLietKeCacTapConKPhanTu.giaiThuat(5, 3);
 

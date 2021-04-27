@@ -3,6 +3,9 @@ package quy_hoach_dong.bai_tap.trang_170_co_huong_dan;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by cuongdt on 4/23/2021.
@@ -41,37 +44,28 @@ public class BaiTap2 {
         for (int i = 1; i < b.length; i++) {
             b[i] = MAX;
         }
+        Map<Integer, Integer> m = new HashMap<>();
         for (int i = 1; i <= M; i++) {
-            ArrayList<Integer> temp = new ArrayList<>();
             for (int k = 0; k < n; k++) {
-                if (A[k] <= i && b[i - A[k]] < k) {
-                    temp.add(k);
+                if (A[k] <= i && b[i - A[k]] + 1 < b[i]) {
+                    b[i] = b[i - A[k]] + 1;
+                    m.put(b[i], A[k]);
                 }
             }
-            if (temp.size() > 0) {
-                b[i] = Collections.min(temp);
-            }
+
 
         }
 
-        // trace
-        for (int a : b) {
-            System.out.println(a);
-        }
+
         if (b[M] == MAX) {
             System.out.println("Không có đáp án");
 
         } else {
-            ArrayList<Integer> trace = new ArrayList<>();
+            Object[] keys = m.keySet().toArray();
 
-            int t = M;
-            while (t >= 0) {
-                trace.add(b[t]);
-                t = M - trace.stream().map(e-> A[e]).mapToInt(Integer::intValue).sum();
-            }
+            for (int i = 0; i < b[M]; i++) {
+                System.out.println(m.get(keys[i]));
 
-            for (int a : trace) {
-                System.out.println("Chon goi keo so: " + a + " có số kẹo là: " + A[a]);
             }
 
         }
@@ -80,9 +74,9 @@ public class BaiTap2 {
 
 
     public static void main(String[] args) {
-        int n = 6;
-        int M = 8;
-        int[] A = {3, 4, 9, 5, 6, 1};
+        int n = 3;
+        int M = 32;
+        int[] A = {1, 3, 5};
         BaiTap2 baiTap2 = new BaiTap2(n, M, A);
         baiTap2.optimize();
 

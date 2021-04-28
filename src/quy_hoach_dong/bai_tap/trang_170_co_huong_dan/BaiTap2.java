@@ -1,11 +1,6 @@
 package quy_hoach_dong.bai_tap.trang_170_co_huong_dan;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by cuongdt on 4/23/2021.
@@ -29,12 +24,14 @@ public class BaiTap2 {
     private int n;
     private int M;
     private int[] A;
+    private int[] maxA;
     private int MAX = 10000000;
 
-    public BaiTap2(int n, int m, int[] a) {
+    public BaiTap2(int n, int m, int[] a, int[] maxA) {
         this.n = n;
         M = m;
         A = a;
+        this.maxA = maxA;
     }
 
     private void optimize() {
@@ -47,9 +44,10 @@ public class BaiTap2 {
         Map<Integer, Integer> m = new HashMap<>();
         for (int i = 1; i <= M; i++) {
             for (int k = 0; k < n; k++) {
-                if (A[k] <= i && b[i - A[k]] + 1 < b[i]) {
-                    b[i] = b[i - A[k]] + 1;
-                    m.put(b[i], A[k]);
+                if (A[k] <= i && b[i - A[k]] + 1 < b[i] ) {
+                        b[i] = b[i - A[k]] + 1;
+                        m.put(b[i], A[k]);
+
                 }
             }
 
@@ -61,23 +59,38 @@ public class BaiTap2 {
             System.out.println("Không có đáp án");
 
         } else {
+            System.out.printf("min: "+b[M]+"\n");
             Object[] keys = m.keySet().toArray();
-
+            Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
             for (int i = 0; i < b[M]; i++) {
-                System.out.println(m.get(keys[i]));
+                addElement(map, m.get(keys[i]));
+            }
 
+            for (Integer key : map.keySet()) {
+                System.out.printf("%d : %d lần.\n", key, map.get(key));
             }
 
         }
 
     }
 
+    private void addElement(Map<Integer, Integer> map, int element) {
+        if (map.containsKey(element)) {
+            int count = map.get(element) + 1;
+            map.put(element, count);
+        } else {
+            map.put(element, 1);
+        }
+    }
 
     public static void main(String[] args) {
-        int n = 3;
-        int M = 32;
-        int[] A = {1, 3, 5};
-        BaiTap2 baiTap2 = new BaiTap2(n, M, A);
+        int n = 8;
+        int M = 27318296;
+        int[] A = {14545, 18182, 10909, 16364, 22727, 24545, 26366, 21818};
+        int[] maxA = {1500,2800,500,500,500,350,450,300};
+
+
+        BaiTap2 baiTap2 = new BaiTap2(n, M, A, maxA);
         baiTap2.optimize();
 
     }

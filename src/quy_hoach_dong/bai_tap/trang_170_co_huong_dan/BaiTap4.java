@@ -46,7 +46,7 @@ public class BaiTap4 {
         }
     }
 
-    private void trade(int[][] B, int m, int n) {
+    private void trace(int[][] B, int m, int n) {
         int[] X = new int[m];
 
         for (int i = 1; i < m; i++) {
@@ -115,7 +115,7 @@ public class BaiTap4 {
             System.out.println();
         }
         System.out.println("------------------------");
-        baiTap4.trade(B, m, n);
+        baiTap4.trace(B, m, n);
 
 
     }

@@ -24,14 +24,12 @@ public class BaiTap2 {
     private int n;
     private int M;
     private int[] A;
-    private int[] maxA;
     private int MAX = 10000000;
 
-    public BaiTap2(int n, int m, int[] a, int[] maxA) {
+    public BaiTap2(int n, int m, int[] a) {
         this.n = n;
         M = m;
         A = a;
-        this.maxA = maxA;
     }
 
     private void optimize() {
@@ -51,9 +49,7 @@ public class BaiTap2 {
                 }
             }
 
-
         }
-
 
         if (b[M] == MAX) {
             System.out.println("Không có đáp án");
@@ -84,13 +80,12 @@ public class BaiTap2 {
     }
 
     public static void main(String[] args) {
-        int n = 8;
-        int M = 27318296;
-        int[] A = {14545, 18182, 10909, 16364, 22727, 24545, 26366, 21818};
-        int[] maxA = {1500,2800,500,500,500,350,450,300};
+        int n = 4;
+        int M = 100;
+        int[] A = {7, 3, 2, 4};
 
 
-        BaiTap2 baiTap2 = new BaiTap2(n, M, A, maxA);
+        BaiTap2 baiTap2 = new BaiTap2(n, M, A);
         baiTap2.optimize();
 
     }

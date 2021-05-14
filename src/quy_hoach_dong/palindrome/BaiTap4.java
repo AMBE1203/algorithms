@@ -3,7 +3,7 @@ package quy_hoach_dong.palindrome;
 /**
  * Created by cuongdt on 5/6/2021.
  * Bài toán: Cho một xâu độ dài không quá 500, hỏi phải thêm vào nó ít nhất bao nhiêu xâu kí tự để nó trở thành một palindrome.
- * Gọi F[i, j] là số phé[ biến đổi ít nhất cần thêm vào đoạn [i, j] để nó trở thành palindrome.
+ * Gọi F[i, j] là số phép biến đổi ít nhất cần thêm vào đoạn [i, j] để nó trở thành palindrome.
  * Ta có:
  * F[i, i] = 0;
  * Nếu Si = Sj thì F[i, j] = F[i+1, j-1]

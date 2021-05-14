@@ -30,7 +30,6 @@ public class BaiTap2 {
         }
         for (int i = 1; i < n - 1; i++) {
             F[i + 1][i] = true;
-
         }
         for (int k = 1; k < n; k++) {
             for (int i = 0; i < (n - k); i++) {
@@ -75,6 +74,8 @@ public class BaiTap2 {
             System.out.println("i = " + maxKey.keySet().toArray()[0]);
             System.out.println("j = " + maxKey.values().toArray()[0]);
             System.out.println("max palindrome length: " + maxEntry.getValue());
+            System.out.println("palindrome: " + s.substring((int) maxKey.keySet().toArray()[0], (int) maxKey.values().toArray()[0]+1))
+            ;
         } else {
             System.out.println("max palindrome length: 1");
 
@@ -83,7 +84,7 @@ public class BaiTap2 {
     }
 
     public static void main(String[] args) {
-        BaiTap2 baiTap2 = new BaiTap2("abcd");
+        BaiTap2 baiTap2 = new BaiTap2("jhdjs");
         baiTap2.optimize();
     }
 }

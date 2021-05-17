@@ -11,6 +11,7 @@ package quy_hoach_dong.bai_tap.trang_172_khong_co_huong_dan;
 public class BaiTap4 {
 
     String s;
+    int[][] F;
 
     public BaiTap4(String s) {
         this.s = s;
@@ -20,7 +21,7 @@ public class BaiTap4 {
         String maxPalindrome = "";
 
         int n = s.length();
-        int[][] F = new int[n][n];
+        F = new int[n][n];
 
         for (int i = 0; i < n; i++) {
             F[i][i] = 1;
@@ -50,9 +51,28 @@ public class BaiTap4 {
         return F[0][n - 1];
     }
 
+    private void trace(int i, int j) {
+        if (i == j) {
+            System.out.printf(s.charAt(i) + "");
+            return;
+        }
+        if (s.charAt(i) == s.charAt(j)) {
+            System.out.printf(s.charAt(i) + "");
+            trace(i + 1, j - 1);
+            System.out.printf(s.charAt(j) + "");
+            return;
+        }
+        if (F[i][j] == F[i + 1][j]) {
+            trace(i + 1, j);
+        } else {
+            trace(i, j - 1);
+        }
+    }
+
     public static void main(String[] args) {
         String str = "jhdjskh";
         BaiTap4 baiTap4 = new BaiTap4(str);
         baiTap4.optimize();
+        baiTap4.trace(0,str.length()-1);
     }
 }
